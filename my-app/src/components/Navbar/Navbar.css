@@ -6,6 +6,7 @@
   font-family: 'Ubuntu', sans-serif;
   background-color: purple;
   transition: all 0.3s ease;
+  top: 0;
   }
 
   .navbar .max__width{

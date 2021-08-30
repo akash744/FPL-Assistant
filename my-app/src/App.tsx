@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Login from "./pages/Login"
 import Splash from './pages/Splash';
+import PlayerComparisons from './pages/PlayerComparisons';
 
 function App() {
 
@@ -13,7 +14,7 @@ function App() {
 
   return (
     <div className="App">
-      <Splash></Splash>
+      <PlayerComparisons></PlayerComparisons>
     </div>
   );
 }

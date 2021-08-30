@@ -1,0 +1,59 @@
+.radar {
+    display: flex;
+    align-items: center;
+    margin: 20px;
+    opacity: 0;
+    transform: scale(85%);
+    transition: 2s;
+  }
+  
+  .radar--zoom {
+    opacity: 1;
+    transform: scale(100%);
+    transition: 2s;
+  }
+  
+  .radar__image {
+    width: 60%;
+    max-height: 704px;
+    max-width: 704px;
+    margin-top: auto;
+  }
+  
+  .radar__content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .radar__title {
+    text-align: center;
+  }
+
+  .player__image1{
+      width: 40%;
+  }
+
+  .player__image2{
+      width: 40%;
+  }
+
+  .image__content{
+      justify-content: space-between;
+  }
+  
+  @media screen and (max-width: 800px) {
+    .radar {
+      flex-direction: column;
+      background-color: rgb(236, 236, 236);
+    }
+  
+    .radar__image {
+      width: 100%;
+    }
+  }
+  
