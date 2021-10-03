@@ -15,7 +15,7 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import travel_01 from "./assets/travel-01.jpg";
 
 
-import { withStyles, createStyles, Theme } from "@material-ui/core/styles";
+import { withStyles, createStyles, Theme, createTheme, ThemeProvider } from "@material-ui/core/styles";
 import zIndex from '@material-ui/core/styles/zIndex';
 
 type LoginProps = {
@@ -73,6 +73,16 @@ const styles = (theme: Theme) => createStyles({
     },
 });
 
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#38003c',
+    },
+  },
+});
+
+
+
 class Login extends React.Component<LoginProps, LoginState> {
     constructor(props: LoginProps) {
         super(props);
@@ -94,6 +104,7 @@ class Login extends React.Component<LoginProps, LoginState> {
         const { classes } = this.props;
 
         return (
+          <ThemeProvider theme={theme}>
             <div>
               <Grid container component="main" className={classes.root}>
                 <CssBaseline />
@@ -148,7 +159,7 @@ class Login extends React.Component<LoginProps, LoginState> {
                             href="https://users.premierleague.com/accounts/password-reset"
                             variant="body2"
                           >
-                            Forgot Password?
+                            Or Login With Google
                           </Link>
                         </Grid>
                         <Grid item>
@@ -168,6 +179,7 @@ class Login extends React.Component<LoginProps, LoginState> {
                 <CircularProgress color="inherit"/>
               </Backdrop>
             </div>
+          </ThemeProvider>
         );
     }
 }

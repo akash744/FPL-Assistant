@@ -3,18 +3,25 @@ import './App.css';
 import Login from "./pages/Login"
 import Splash from './pages/Splash';
 import PlayerComparisons from './pages/PlayerComparisons';
+import Team from './pages/Team';
+import AppBar from './components/AppBar';
+import {Route, BrowserRouter as Router, Switch} from "react-router-dom";
+
 
 function App() {
 
-  const navbarLinks = [
-    { url: "#", title: "Home" },
-    { url: "#", title: "Player Comparisons" },
-    { url: "#", title: "Team Maker" },
-  ];
-
   return (
     <div className="App">
-      <PlayerComparisons></PlayerComparisons>
+      <Router>
+        <Switch>
+          <Route path="/" component={Splash}>
+          </Route>
+          <Route path="/splash" component={Splash}>
+          </Route>
+          <Route path="/playercomparisons" component={Login}> 
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }
