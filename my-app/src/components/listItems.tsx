@@ -5,29 +5,25 @@ import ListItemText from '@mui/material/ListItemText';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import PeopleIcon from '@mui/icons-material/People';
-import { Route } from 'react-router-dom';
-import { useHistory } from 'react-router-dom';
-
+import { Link as RouterLink } from 'react-router-dom';
 
 
 export const mainListItems = (
   
-
-
   <div>
-    <ListItem button>
+    <ListItem button component={RouterLink} to="/">
       <ListItemIcon>
         <DashboardIcon />
       </ListItemIcon>
       <ListItemText primary="Dashboard" />
     </ListItem>
-    <ListItem button>
+    <ListItem button component={RouterLink} to="/playercomp">
       <ListItemIcon>
         <ShoppingCartIcon />
       </ListItemIcon>
       <ListItemText primary="Player Comparisons" />
     </ListItem>
-    <ListItem button>
+    <ListItem button component={RouterLink} to="/team">
       <ListItemIcon>
         <PeopleIcon />
       </ListItemIcon>

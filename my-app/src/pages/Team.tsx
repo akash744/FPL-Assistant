@@ -11,26 +11,26 @@ import footballPitch from "../assets/football-pitch.svg";
 import "./Team.css";
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import DashBoard from  "../components/AppBar"
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import { withRouter , RouteComponentProps  } from 'react-router-dom';
+import SearchBar from "../components/SearchBar/SearchBar";
+import BookData from "../Data.json";
 
 
 type State = {
-  text: string;
+  text?: string;
 };
 
 
-class Team extends React.Component<State>  {
+class Team extends React.Component<State & RouteComponentProps>  {
 
-  navbarLinks = [
-    { url: "#", title: "Home" },
-    { url: "#", title: "Player Comparisons" },
-    { url: "#", title: "Team Maker" },
-  ];
-  
+
   state = {
     text: "Enter Player Id",
   };
 
-  // typing on RIGHT hand side of =
   onChange = (e: React.FormEvent<HTMLInputElement>): void => {
     this.setState({ text: e.currentTarget.value });
   };
@@ -38,28 +38,16 @@ class Team extends React.Component<State>  {
   render(){
     return (
       <div className="App">
-        <Navbar navbarLinks={this.navbarLinks} />
         
         <div className="top">
-          <TextField
-            variant="outlined"
-            margin="normal"
-            required
-            color="secondary"
-            id="playerId"
-            label="Enter your Player ID"
-            name="playerId"
-            autoComplete="playerId"
-            autoFocus    
-            />
-            <Button className="Button" variant="contained">Contained</Button>
-
+          <div className="search">
+            <SearchBar placeholder="Add a Player to your Team..." data={BookData} />
+          </div>
         </div>
-        
-        
+
       </div>
     );
   }
 }
 
-export default Team;
+export default withRouter(Team);
